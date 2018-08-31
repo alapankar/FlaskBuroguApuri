@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+	<h1>{{blog['name']}}</h1>
+	<p>Welcome to my blog</p>
+	<a href="{{url_for('create')}}">Create a new post</a>
+	<ul>
+	{% for post_id,post in blog['posts'].items() %}
+		<li><a href="{{url_for('post',post_id=post_id)}}">{{post['title']}}</a></li>
+	{% endfor %}
+	
+	</ul>
+	
+</body>
+</html>
